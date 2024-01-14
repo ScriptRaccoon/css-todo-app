@@ -18,3 +18,8 @@ $button-padding: 0.25rem 0.5rem;
 	padding: 0.25rem 0.5rem;
 	@include outline();
 }
+
+a {
+	@include outline();
+	border-radius: 0.25rem;
+}

@@ -20,4 +20,14 @@ header {
 		font-style: italic;
 		text-wrap: balance;
 	}
+
+	#github {
+		position: absolute;
+		top: 0.5rem;
+		right: 0.75rem;
+
+		img {
+			width: 1.25rem;
+		}
+	}
 }
