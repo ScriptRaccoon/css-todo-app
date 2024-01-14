@@ -7,10 +7,6 @@ body {
 		Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
 		sans-serif;
 	line-height: 1.5;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	padding-bottom: 2rem;
 }
 
 main {
@@ -18,4 +14,10 @@ main {
 	margin: 0 auto;
 	padding-inline: 0.75rem;
 	width: 100%;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 2rem;
 }

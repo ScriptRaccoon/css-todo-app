@@ -17,7 +17,7 @@ $amount: 25;
 	height: 0;
 }
 
-menu .btn {
+menu button:not([type="reset"]) {
 	display: grid;
 	padding: 0;
 
@@ -58,7 +58,7 @@ menu .btn {
 }
 
 #radio#{$amount}:checked ~ menu #add-btn,
-#radio0:checked ~ menu #remove-btn {
+#radio0:checked ~ menu :is(#remove-btn, #reset-btn) {
 	@include disabled();
 
 	.content {
