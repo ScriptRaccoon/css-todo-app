@@ -1,0 +1,21 @@
+{
+	"name": "css-todo-app",
+	"version": "1.0.0",
+	"description": "this is a todo app made with css logic only",
+	"scripts": {
+		"build:css": "sass src/styles/index.scss dist/style.css --no-source-map --style compressed",
+		"dev:css": "sass src/styles/index.scss dist/style.css  --no-source-map --watch",
+		"build:html": "pug --pretty src --out dist",
+		"dev:html": "pug --pretty --watch src --out dist",
+		"dev": "concurrently \"npm run dev:css\" \"npm run dev:html\"",
+		"build": "npm run build:css && npm run build:html"
+	},
+	"author": "Script Raccoon",
+	"license": "ISC",
+	"devDependencies": {
+		"concurrently": "^8.2.2",
+		"pug": "^3.0.2",
+		"pug-cli": "1.0.0-alpha6",
+		"sass": "^1.69.7"
+	}
+}

@@ -1,0 +1,20 @@
+@use "colors" as *;
+@use "mixins" as *;
+
+$button-padding: 0.25rem 0.5rem;
+
+.btn {
+	cursor: pointer;
+	background-color: $primary-color;
+	border-radius: 0.25rem;
+	padding: $button-padding;
+	@include outline();
+	transition: opacity 0.2s ease;
+}
+
+.input {
+	background-color: $input-color;
+	border-radius: 0.25rem;
+	padding: 0.25rem 0.5rem;
+	@include outline();
+}

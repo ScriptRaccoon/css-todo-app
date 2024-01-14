@@ -1,0 +1,48 @@
+@use "mixins" as *;
+
+$display: grid;
+$margin: 1rem;
+
+.todos {
+	display: grid;
+}
+
+.todo {
+	margin-top: $margin;
+	display: $display;
+	align-items: center;
+	gap: 0.5rem;
+	font-size: 1.125rem;
+	grid-template-columns: 1fr auto;
+	transition: opacity 0.3s ease, margin-top 0.3s ease;
+
+	.input {
+		transition: opacity 0.2s ease;
+	}
+
+	&:has(.checkbox:checked) {
+		.input {
+			opacity: 0.5;
+			text-decoration: line-through;
+		}
+	}
+
+	.checkbox {
+		appearance: none;
+		-webkit-appearance: none;
+		width: 1.75rem;
+		height: 1.75rem;
+		border-radius: 0.25rem;
+		cursor: pointer;
+		transition: background-image 0.2s ease;
+		background-image: url("./assets/checkbox.svg");
+
+		&:checked {
+			background-image: url("./assets/checkbox-checked.svg");
+		}
+
+		&:focus-visible {
+			@include outline();
+		}
+	}
+}

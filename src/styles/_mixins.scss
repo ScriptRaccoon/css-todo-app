@@ -1,0 +1,36 @@
+@use "colors" as *;
+
+@mixin outline() {
+	&:focus-visible {
+		outline: 1px solid $font-color;
+		outline-offset: 3px;
+	}
+}
+
+@mixin visible() {
+	pointer-events: initial;
+	opacity: 1;
+}
+
+@mixin invisible() {
+	pointer-events: none;
+	opacity: 0;
+}
+
+@mixin disabled() {
+	opacity: 0.5;
+	pointer-events: none;
+	cursor: not-allowed;
+}
+
+@mixin visually-hidden() {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	border: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+}

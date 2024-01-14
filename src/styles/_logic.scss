@@ -1,0 +1,75 @@
+@use "mixins" as *;
+@use "colors" as *;
+@use "inputs";
+@use "todos";
+
+$amount: 25;
+
+.radio,
+.limit-message,
+.empty-message {
+	display: none;
+}
+
+.todo {
+	opacity: 0;
+	margin-top: 0;
+	height: 0;
+}
+
+menu .btn {
+	display: grid;
+	padding: 0;
+
+	> * {
+		grid-area: 1/1;
+		padding: inputs.$button-padding;
+		cursor: inherit;
+		@include invisible();
+	}
+}
+
+@for $i from 0 through $amount {
+	#radio#{$i}:checked {
+		~ menu {
+			@if ($i < $amount) {
+				#add-btn label[for="radio#{$i+1}"] {
+					@include visible();
+				}
+			}
+
+			@if ($i > 0) {
+				#remove-btn label[for="radio#{$i - 1}"] {
+					@include visible();
+				}
+			}
+		}
+
+		~ main .todos {
+			@for $j from 0 through $i {
+				.todo:nth-child(#{$j}) {
+					opacity: 1;
+					margin-top: todos.$margin;
+					height: auto;
+				}
+			}
+		}
+	}
+}
+
+#radio#{$amount}:checked ~ menu #add-btn,
+#radio0:checked ~ menu #remove-btn {
+	@include disabled();
+
+	.content {
+		@include visible();
+	}
+}
+
+#radio#{$amount}:checked ~ .limit-message {
+	display: block;
+}
+
+#radio0:checked ~ main .empty-message {
+	display: block;
+}

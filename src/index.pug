@@ -1,0 +1,41 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title CSS Todo App
+    link(rel='stylesheet' href='style.css')
+  body
+    - amount = 25
+    - indices = Array.from({length: amount + 1}, (v, i) => i)
+
+    each i in indices
+      input(type="radio" class="radio" name="radios",id=`radio${i}`,checked=i==0)
+
+    header
+      h1 CSS Todo App
+      p(class="subtitle")
+        | Believe it or not, no JS is involved here!
+
+    menu
+      button(id="add-btn" class="btn")
+        each i in indices.slice(1) 
+          label(for=`radio${i}`) Add Todo
+        div(class="content") Add Todo 
+      button(id="remove-btn" class="btn")
+        each i in indices.slice(1) 
+          label(for=`radio${i-1}`) Remove Todo
+        div(class="content") Remove Todo
+
+    main
+      div(class="todos")
+        each i in indices
+          div(class="todo")
+            input(type="text" class="input" placeholder="Enter Todo")
+            input(type="checkbox" class="checkbox")
+
+      div(class="empty-message")
+        | Create your first todo
+
+    div(class="limit-message")
+      | You can only add up to #{amount} todos

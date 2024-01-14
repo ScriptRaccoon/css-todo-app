@@ -1,0 +1,20 @@
+@use "colors" as *;
+
+header {
+	padding-block: 1rem;
+	padding-inline: 0.5rem;
+	background-color: $header-color;
+
+	h1 {
+		text-align: center;
+		font-weight: 400;
+	}
+
+	.subtitle {
+		margin-top: 0.5rem;
+		font-size: smaller;
+		text-align: center;
+		color: $secondary-font-color;
+		font-style: italic;
+	}
+}
