@@ -1,25 +1,23 @@
+- amount = 25
+- indices = Array.from({length: amount + 1}, (v, i) => i)
+
 doctype html
 html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    title CSS Todo App
+    title Pure CSS Todo App
     link(rel='stylesheet' href='style.css')
 
   body
-
-    - amount = 25
-    - indices = Array.from({length: amount + 1}, (v, i) => i)
+    header
+      h1 Pure CSS Todo App
+      p(class="subtitle")
+        | Believe it or not, no JS is involved here
 
     form 
-
       each i in indices
         input(type="radio" class="radio" name="radios",id=`radio${i}`,checked=i==0)
-
-      header
-        h1 CSS Todo App
-        p(class="subtitle")
-          | Believe it or not, no JS is involved here
 
       menu
         button(id="add-btn" class="btn" type="button")
@@ -32,7 +30,6 @@ html(lang="en")
           div(class="content") Remove Todo
         button(id="reset-btn" class="btn" type="reset")
           | Clear Todos
-
 
       main
         div(class="todos")

@@ -12,7 +12,6 @@ body {
 main {
 	max-width: 42rem;
 	margin: 0 auto;
-	padding-inline: 0.75rem;
 	width: 100%;
 }
 
@@ -20,4 +19,5 @@ form {
 	display: flex;
 	flex-direction: column;
 	padding-bottom: 2rem;
+	padding-inline: 0.5rem;
 }
