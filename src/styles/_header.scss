@@ -1,7 +1,7 @@
 @use "colors" as *;
 
 header {
-	padding-block: 1rem;
+	padding-block: 1.25rem;
 	background-color: $header-color;
 	padding-inline: 0.5rem;
 
@@ -13,7 +13,7 @@ header {
 	}
 
 	.subtitle {
-		margin-top: 0.5rem;
+		margin-top: 1rem;
 		text-align: center;
 		line-height: 1.1;
 		color: $secondary-font-color;
